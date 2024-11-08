@@ -56,11 +56,17 @@ function install_node {
 
     echo -e "${YELLOW}Введите private_key вашего EVM (без 0x):${NC}"
     read private_key_ICN
+    echo -e "${YELLOW}Введите порт для мониторинга (по умолчанию 9000):${NC}"
+    read monitoring_port
+    if [ -z "${monitoring_port}" ]; then
+        monitoring_port=9000
+    fi
+    read private_key_ICN
 
     echo -e "${BLUE}Скачиваем и запускаем установочный скрипт ICN...${NC}"
-    nohup bash -c "curl -o- https://console.icn.global/downloads/install/start.sh | bash -s -- -p ${private_key_ICN}" > icn_install.log 2>&1 &
+    nohup bash -c "curl -o- https://console.icn.global/downloads/install/start.sh | bash -s -- -p ${private_key_ICN} --monitor-port ${monitoring_port}" > icn_install.log 2>&1 &
 
-    echo -e "${GREEN}Установка ноды ICN запущена в фоновом режиме. Логи установки находятся в файле icn_install.log.${NC}"
+    echo -e "${GREEN}Установка ноды ICN запущена в фоновом режиме на порту ${monitoring_port}. Логи установки находятся в файле icn_install.log.${NC}"
 }
 
 function view_logs {

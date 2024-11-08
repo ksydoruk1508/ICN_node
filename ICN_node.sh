@@ -58,9 +58,9 @@ function install_node {
     read private_key_ICN
 
     echo -e "${BLUE}Скачиваем и запускаем установочный скрипт ICN...${NC}"
-    nohup bash -c "curl -o- https://console.icn.global/downloads/install/start.sh | bash -s -- -p ${private_key_ICN} --port 9006" > icn_install.log 2>&1 &
+    nohup bash -c "curl -o- https://console.icn.global/downloads/install/start.sh | bash -s -- -p ${private_key_ICN}" > icn_install.log 2>&1 &
 
-    echo -e "${GREEN}Установка ноды ICN запущена в фоновом режиме на порту 9006. Логи установки находятся в файле icn_install.log.${NC}"
+    echo -e "${GREEN}Установка ноды ICN запущена в фоновом режиме. Логи установки находятся в файле icn_install.log.${NC}"
 }
 
 function view_logs {

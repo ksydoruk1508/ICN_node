@@ -61,12 +61,11 @@ function install_node {
     if [ -z "${monitoring_port}" ]; then
         monitoring_port=9000
     fi
-    read private_key_ICN
 
     echo -e "${BLUE}Скачиваем и запускаем установочный скрипт ICN...${NC}"
-    nohup bash -c "curl -o- https://console.icn.global/downloads/install/start.sh | bash -s -- -p ${private_key_ICN} --monitor-port ${monitoring_port}" > icn_install.log 2>&1 &
+    nohup bash -c "curl -o- https://console.icn.global/downloads/install/start.sh | bash -s -- -p ${private_key_ICN} --monitoring.server.port ${monitoring_port}" > icn_install.log 2>&1 &
 
-    echo -e "${GREEN}Установка ноды ICN запущена в фоновом режиме на порту ${monitoring_port}. Логи установки находятся в файле icn_install.log.${NC}"
+    echo -e "${GREEN}Установка ноды ICN запущена в фоновом режиме на порту ${monitoring_port}. Логи установки находятся в файле icn_install.log. Убедитесь, что порт доступен для использования.${NC}"
 }
 
 function view_logs {

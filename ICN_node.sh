@@ -6,6 +6,7 @@ GREEN='\033[0;32m'
 YELLOW='\033[0;33m'
 BLUE='\033[0;34m'
 CYAN='\033[0;36m'
+PURPLE='\033[0;35m'
 NC='\033[0m' # Нет цвета (сброс цвета)
 
 # Проверка наличия curl и установка, если не установлен
@@ -82,7 +83,7 @@ function main_menu {
         echo -e "${CYAN}3. Удаление ноды${NC}"
         echo -e "${CYAN}4. Выход${NC}"
 
-        echo -e "${RED}Ссылка на текстовый гайд: https://teletype.in/@c6zr7/ICN_node${NC} "
+        echo -e "${PURPLE}Ссылка на текстовый гайд: https://teletype.in/@c6zr7/ICN_node${NC} "
        
         echo -e "${YELLOW}Введите номер действия:${NC} "
         read choice

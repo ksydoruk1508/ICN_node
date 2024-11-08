@@ -81,6 +81,8 @@ function main_menu {
         echo -e "${CYAN}2. Просмотр логов${NC}"
         echo -e "${CYAN}3. Удаление ноды${NC}"
         echo -e "${CYAN}4. Выход${NC}"
+
+        echo -e "${RED}Ссылка на текстовый гайд: https://teletype.in/@c6zr7/ICN_node${NC} "
        
         echo -e "${YELLOW}Введите номер действия:${NC} "
         read choice

@@ -54,13 +54,13 @@ function install_node {
     echo -e "${BLUE}Обновляем сервер...${NC}"
     sudo apt-get update -y && sudo apt upgrade -y && sudo apt-get install make curl -y
 
-    echo -e "${YELLOW}Введите private_key вашего EVM:${NC}"
+    echo -e "${YELLOW}Введите private_key вашего EVM (без 0x):${NC}"
     read private_key_ICN
 
     echo -e "${BLUE}Скачиваем и запускаем установочный скрипт ICN...${NC}"
-    nohup bash -c "curl -o- https://console.icn.global/downloads/install/start.sh | bash -s -- -p ${private_key_ICN}" > icn_install.log 2>&1 &
+    nohup bash -c "curl -o- https://console.icn.global/downloads/install/start.sh | bash -s -- -p ${private_key_ICN} --port 9005"" > icn_install.log 2>&1 &
 
-    echo -e "${GREEN}Установка ноды ICN запущена в фоновом режиме. Логи установки находятся в файле icn_install.log.${NC}"
+    echo -e "${GREEN}Установка ноды ICN запущена в фоновом режиме на порту 9005. Логи установки находятся в файле icn_install.log.${NC}"
 }
 
 function view_logs {
@@ -71,7 +71,7 @@ function view_logs {
 function remove_node {
     echo -e "${BLUE}Удаляем ноду ICN...${NC}"
     pkill -f "curl -o- https://console.icn.global/downloads/install/start.sh"
-    echo -e "${GREEN}Процесс установки ноды ICN завершен.${NC}"
+    echo -e "${GREEN}Процесс удаления ноды ICN завершен.${NC}"
 }
 
 function main_menu {

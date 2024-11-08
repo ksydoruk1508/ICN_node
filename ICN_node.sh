@@ -74,13 +74,7 @@ function remove_node {
     echo -e "${GREEN}Процесс установки ноды ICN завершен.${NC}"
 }
 
-function main_menu {Видим, что статус “Node started successfully” — значит всё гудВидим, что статус “Node started successfully” — значит всё гуд
-
-
-Видим, что статус “Node started successfully” — значит всё гудВидим, что статус “Node started successfully” — значит всё гудВидим, что статус “Node started successfully” — значит всё гуд
-
-
-
+function main_menu {
     while true; do
         echo -e "${YELLOW}Выберите действие:${NC}"
         echo -e "${CYAN}1. Установка ноды${NC}"
